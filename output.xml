@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.9.7 on win32)" generated="20220201 09:59:11.545" rpa="false" schemaversion="2">
+<suite id="s1" name="Mytask" source="C:\Users\rames\PycharmProjects\Mytasks\TestCases\mytask.robot">
+<kw name="Launch Browser" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${br}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220201 09:59:11.775" level="INFO">Opening browser 'chrome' to base url 'https://whenwise.agileway.net/sign-in'.</msg>
+<status status="PASS" starttime="20220201 09:59:11.775" endtime="20220201 09:59:21.037"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220201 09:59:21.037" endtime="20220201 09:59:21.169"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:11.774" endtime="20220201 09:59:21.169"/>
+</kw>
+<test id="s1-t1" name="demo">
+<kw name="Login">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>//*[@id="login_form"]/div[3]/div/div/div[2]/div[1]/a[4]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:21.172" level="INFO">Clicking link '//*[@id="login_form"]/div[3]/div/div/div[2]/div[1]/a[4]'.</msg>
+<status status="PASS" starttime="20220201 09:59:21.171" endtime="20220201 09:59:21.283"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:21.284" level="INFO">Clicking button 'id:login-btn'.</msg>
+<status status="PASS" starttime="20220201 09:59:21.283" endtime="20220201 09:59:23.455"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:21.171" endtime="20220201 09:59:23.456"/>
+</kw>
+<kw name="Page_validation">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Dashboard</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220201 09:59:23.457" endtime="20220201 09:59:23.473"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:23.456" endtime="20220201 09:59:23.473"/>
+</kw>
+<kw name="Verify_Service">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="menu_services"]/span[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:23.474" level="INFO">Clicking element '//*[@id="menu_services"]/span[2]'.</msg>
+<status status="PASS" starttime="20220201 09:59:23.474" endtime="20220201 09:59:24.485"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Services</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220201 09:59:24.485" endtime="20220201 09:59:24.497"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:23.474" endtime="20220201 09:59:24.498"/>
+</kw>
+<kw name="Extract_prices">
+<for flavor="IN">
+<var>${val}</var>
+<value>@{values}</value>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[1]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:24.519" level="INFO">${output} = A$39.99</msg>
+<status status="PASS" starttime="20220201 09:59:24.498" endtime="20220201 09:59:24.519"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 09:59:24.519" level="WARN">A$39.99</msg>
+<status status="PASS" starttime="20220201 09:59:24.519" endtime="20220201 09:59:24.520"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:24.498" endtime="20220201 09:59:24.520"/>
+</iter>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[2]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:24.541" level="INFO">${output} = A$100.00</msg>
+<status status="PASS" starttime="20220201 09:59:24.520" endtime="20220201 09:59:24.541"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 09:59:24.542" level="WARN">A$100.00</msg>
+<status status="PASS" starttime="20220201 09:59:24.542" endtime="20220201 09:59:24.543"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:24.520" endtime="20220201 09:59:24.543"/>
+</iter>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[3]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:24.563" level="INFO">${output} = A$60.00</msg>
+<status status="PASS" starttime="20220201 09:59:24.543" endtime="20220201 09:59:24.563"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 09:59:24.563" level="WARN">A$60.00</msg>
+<status status="PASS" starttime="20220201 09:59:24.563" endtime="20220201 09:59:24.564"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:24.543" endtime="20220201 09:59:24.564"/>
+</iter>
+<status status="PASS" starttime="20220201 09:59:24.498" endtime="20220201 09:59:24.564"/>
+</for>
+<status status="PASS" starttime="20220201 09:59:24.498" endtime="20220201 09:59:24.564"/>
+</kw>
+<kw name="Get_price with Rgex">
+<for flavor="IN">
+<var>${val}</var>
+<value>@{values}</value>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[1]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:24.577" level="INFO">${output} = A$39.99</msg>
+<status status="PASS" starttime="20220201 09:59:24.564" endtime="20220201 09:59:24.577"/>
+</kw>
+<kw name="Get Price" library="getp">
+<var>${res}</var>
+<arg>${output}</arg>
+<msg timestamp="20220201 09:59:24.578" level="INFO">${res} = 39</msg>
+<status status="PASS" starttime="20220201 09:59:24.577" endtime="20220201 09:59:24.578"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 09:59:24.578" level="WARN">39</msg>
+<status status="PASS" starttime="20220201 09:59:24.578" endtime="20220201 09:59:24.578"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:24.564" endtime="20220201 09:59:24.579"/>
+</iter>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[2]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:24.591" level="INFO">${output} = A$100.00</msg>
+<status status="PASS" starttime="20220201 09:59:24.579" endtime="20220201 09:59:24.591"/>
+</kw>
+<kw name="Get Price" library="getp">
+<var>${res}</var>
+<arg>${output}</arg>
+<msg timestamp="20220201 09:59:24.592" level="INFO">${res} = 100</msg>
+<status status="PASS" starttime="20220201 09:59:24.591" endtime="20220201 09:59:24.592"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 09:59:24.592" level="WARN">100</msg>
+<status status="PASS" starttime="20220201 09:59:24.592" endtime="20220201 09:59:24.593"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:24.579" endtime="20220201 09:59:24.593"/>
+</iter>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[3]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:24.607" level="INFO">${output} = A$60.00</msg>
+<status status="PASS" starttime="20220201 09:59:24.593" endtime="20220201 09:59:24.607"/>
+</kw>
+<kw name="Get Price" library="getp">
+<var>${res}</var>
+<arg>${output}</arg>
+<msg timestamp="20220201 09:59:24.607" level="INFO">${res} = 60</msg>
+<status status="PASS" starttime="20220201 09:59:24.607" endtime="20220201 09:59:24.607"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 09:59:24.608" level="WARN">60</msg>
+<status status="PASS" starttime="20220201 09:59:24.607" endtime="20220201 09:59:24.609"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:24.593" endtime="20220201 09:59:24.609"/>
+</iter>
+<status status="PASS" starttime="20220201 09:59:24.564" endtime="20220201 09:59:24.609"/>
+</for>
+<status status="PASS" starttime="20220201 09:59:24.564" endtime="20220201 09:59:24.609"/>
+</kw>
+<kw name="IfElse_Case">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${choice}==1</arg>
+<arg>Add</arg>
+<arg>ELSE IF</arg>
+<arg>${choice}==2</arg>
+<arg>Mul</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>"nothing is done"</arg>
+<arg>WARN</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>"nothing is done"</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 09:59:24.610" level="WARN">"nothing is done"</msg>
+<status status="PASS" starttime="20220201 09:59:24.610" endtime="20220201 09:59:24.610"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:24.609" endtime="20220201 09:59:24.610"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:24.609" endtime="20220201 09:59:24.611"/>
+</kw>
+<kw name="Create_Service">
+<kw name="Get File" library="OperatingSystem">
+<var>${j_file}</var>
+<arg>data.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220201 09:59:24.611" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\rames\PycharmProjects\Mytasks\TestCases\data.json"&gt;C:\Users\rames\PycharmProjects\Mytasks\TestCases\data.json&lt;/a&gt;'.</msg>
+<msg timestamp="20220201 09:59:24.611" level="INFO">${j_file} = {
+  "Service":[
+{"ServiceName":"football",
+"Code":"RA12223",
+"Price":"124.24",
+"ServiceType":"Default for new clients"
+}
+]
+}</msg>
+<status status="PASS" starttime="20220201 09:59:24.611" endtime="20220201 09:59:24.611"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${jsfile}</var>
+<arg>json.loads('''${j_file}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220201 09:59:24.612" level="INFO">${jsfile} = {'Service': [{'ServiceName': 'football', 'Code': 'RA12223', 'Price': '124.24', 'ServiceType': 'Default for new clients'}]}</msg>
+<status status="PASS" starttime="20220201 09:59:24.612" endtime="20220201 09:59:24.612"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${service_name}</var>
+<arg>${jsfile["Service"][0]["ServiceName"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220201 09:59:24.613" level="INFO">${service_name} = football</msg>
+<status status="PASS" starttime="20220201 09:59:24.612" endtime="20220201 09:59:24.613"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${service_code}</var>
+<arg>${jsfile["Service"][0]["Code"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220201 09:59:24.614" level="INFO">${service_code} = RA12223</msg>
+<status status="PASS" starttime="20220201 09:59:24.613" endtime="20220201 09:59:24.614"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${price}</var>
+<arg>${jsfile["Service"][0]["Price"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220201 09:59:24.614" level="INFO">${price} = 124.24</msg>
+<status status="PASS" starttime="20220201 09:59:24.614" endtime="20220201 09:59:24.614"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="new-service-12-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:24.615" level="INFO">Clicking element '//*[@id="new-service-12-link"]'.</msg>
+<status status="PASS" starttime="20220201 09:59:24.614" endtime="20220201 09:59:26.115"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="service_name"]</arg>
+<arg>${service_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:26.116" level="INFO">Typing text 'football' into text field '//input[@id="service_name"]'.</msg>
+<status status="PASS" starttime="20220201 09:59:26.116" endtime="20220201 09:59:26.229"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="service_code"]</arg>
+<arg>${service_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:26.230" level="INFO">Typing text 'RA12223' into text field '//input[@id="service_code"]'.</msg>
+<status status="PASS" starttime="20220201 09:59:26.229" endtime="20220201 09:59:26.317"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="service_price"]</arg>
+<arg>${price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:26.318" level="INFO">Typing text '124.24' into text field '//input[@id="service_price"]'.</msg>
+<status status="PASS" starttime="20220201 09:59:26.318" endtime="20220201 09:59:26.400"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@id="save-btn"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220201 09:59:26.400" level="INFO">Clicking button '//button[@id="save-btn"]'.</msg>
+<status status="PASS" starttime="20220201 09:59:26.400" endtime="20220201 09:59:27.335"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:24.611" endtime="20220201 09:59:27.336"/>
+</kw>
+<status status="PASS" starttime="20220201 09:59:21.169" endtime="20220201 09:59:27.336"/>
+</test>
+<kw name="Close_Browser" type="TEARDOWN">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<kw name="Close_Browser">
+<msg timestamp="20220201 09:59:27.349" level="FAIL">Maximum limit of started keywords exceeded.</msg>
+<status status="FAIL" starttime="20220201 09:59:27.348" endtime="20220201 09:59:27.349"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.348" endtime="20220201 09:59:27.349"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.348" endtime="20220201 09:59:27.349"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.348" endtime="20220201 09:59:27.349"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.347" endtime="20220201 09:59:27.349"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.347" endtime="20220201 09:59:27.349"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.347" endtime="20220201 09:59:27.350"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.347" endtime="20220201 09:59:27.350"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.347" endtime="20220201 09:59:27.350"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.347" endtime="20220201 09:59:27.350"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.346" endtime="20220201 09:59:27.351"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.346" endtime="20220201 09:59:27.351"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.346" endtime="20220201 09:59:27.351"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.346" endtime="20220201 09:59:27.351"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.345" endtime="20220201 09:59:27.351"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.345" endtime="20220201 09:59:27.351"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.345" endtime="20220201 09:59:27.352"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.345" endtime="20220201 09:59:27.352"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.344" endtime="20220201 09:59:27.352"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.344" endtime="20220201 09:59:27.352"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.343" endtime="20220201 09:59:27.352"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.343" endtime="20220201 09:59:27.352"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.343" endtime="20220201 09:59:27.352"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.343" endtime="20220201 09:59:27.353"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.342" endtime="20220201 09:59:27.353"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.342" endtime="20220201 09:59:27.353"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.342" endtime="20220201 09:59:27.353"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.342" endtime="20220201 09:59:27.353"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.342" endtime="20220201 09:59:27.353"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.341" endtime="20220201 09:59:27.353"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.341" endtime="20220201 09:59:27.353"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.341" endtime="20220201 09:59:27.354"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.341" endtime="20220201 09:59:27.354"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.340" endtime="20220201 09:59:27.354"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.340" endtime="20220201 09:59:27.354"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.340" endtime="20220201 09:59:27.354"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.340" endtime="20220201 09:59:27.354"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.340" endtime="20220201 09:59:27.354"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.339" endtime="20220201 09:59:27.354"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.339" endtime="20220201 09:59:27.355"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.339" endtime="20220201 09:59:27.355"/>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:27.338" endtime="20220201 09:59:27.355">Maximum limit of started keywords exceeded.</status>
+</kw>
+<status status="FAIL" starttime="20220201 09:59:11.546" endtime="20220201 09:59:27.355">Suite teardown failed:
+Maximum limit of started keywords exceeded.</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Mytask">Mytask</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220201 09:59:24.519" level="WARN">A$39.99</msg>
+<msg timestamp="20220201 09:59:24.542" level="WARN">A$100.00</msg>
+<msg timestamp="20220201 09:59:24.563" level="WARN">A$60.00</msg>
+<msg timestamp="20220201 09:59:24.578" level="WARN">39</msg>
+<msg timestamp="20220201 09:59:24.592" level="WARN">100</msg>
+<msg timestamp="20220201 09:59:24.608" level="WARN">60</msg>
+<msg timestamp="20220201 09:59:24.610" level="WARN">"nothing is done"</msg>
+</errors>
+</robot>

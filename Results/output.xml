@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.7.9 on win32)" generated="20220201 11:15:43.466" rpa="false" schemaversion="2">
+<suite id="s1" name="Mytask" source="C:\Users\rames\PycharmProjects\Mytasks\TestCases\Mytask.robot">
+<kw name="Launch Browser" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${br}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220201 11:15:43.742" level="INFO">Opening browser 'chrome' to base url 'https://whenwise.agileway.net/sign-in'.</msg>
+<status status="PASS" starttime="20220201 11:15:43.742" endtime="20220201 11:15:53.983"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220201 11:15:53.983" endtime="20220201 11:15:54.111"/>
+</kw>
+<status status="PASS" starttime="20220201 11:15:43.742" endtime="20220201 11:15:54.112"/>
+</kw>
+<test id="s1-t1" name="demo">
+<kw name="Login">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>//*[@id="login_form"]/div[3]/div/div/div[2]/div[1]/a[4]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220201 11:15:54.115" level="INFO">Clicking link '//*[@id="login_form"]/div[3]/div/div/div[2]/div[1]/a[4]'.</msg>
+<status status="PASS" starttime="20220201 11:15:54.114" endtime="20220201 11:15:54.268"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id:login-btn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220201 11:15:54.268" level="INFO">Clicking button 'id:login-btn'.</msg>
+<status status="PASS" starttime="20220201 11:15:54.268" endtime="20220201 11:15:58.950"/>
+</kw>
+<status status="PASS" starttime="20220201 11:15:54.113" endtime="20220201 11:15:58.950"/>
+</kw>
+<kw name="Page_validation">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Dashboard</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220201 11:15:58.951" endtime="20220201 11:15:58.965"/>
+</kw>
+<status status="PASS" starttime="20220201 11:15:58.950" endtime="20220201 11:15:58.965"/>
+</kw>
+<kw name="Verify_Service">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="menu_services"]/span[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220201 11:15:58.966" level="INFO">Clicking element '//*[@id="menu_services"]/span[2]'.</msg>
+<status status="PASS" starttime="20220201 11:15:58.965" endtime="20220201 11:16:00.249"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Services</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20220201 11:16:00.249" endtime="20220201 11:16:00.266"/>
+</kw>
+<status status="PASS" starttime="20220201 11:15:58.965" endtime="20220201 11:16:00.266"/>
+</kw>
+<kw name="Extract_prices">
+<for flavor="IN">
+<var>${val}</var>
+<value>@{values}</value>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[1]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:00.293" level="INFO">${output} = A$39.99</msg>
+<status status="PASS" starttime="20220201 11:16:00.267" endtime="20220201 11:16:00.293"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 11:16:00.293" level="WARN">A$39.99</msg>
+<status status="PASS" starttime="20220201 11:16:00.293" endtime="20220201 11:16:00.293"/>
+</kw>
+<status status="PASS" starttime="20220201 11:16:00.267" endtime="20220201 11:16:00.293"/>
+</iter>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[2]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:00.314" level="INFO">${output} = A$100.00</msg>
+<status status="PASS" starttime="20220201 11:16:00.294" endtime="20220201 11:16:00.314"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 11:16:00.314" level="WARN">A$100.00</msg>
+<status status="PASS" starttime="20220201 11:16:00.314" endtime="20220201 11:16:00.314"/>
+</kw>
+<status status="PASS" starttime="20220201 11:16:00.294" endtime="20220201 11:16:00.314"/>
+</iter>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[3]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:00.335" level="INFO">${output} = A$60.00</msg>
+<status status="PASS" starttime="20220201 11:16:00.314" endtime="20220201 11:16:00.335"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${output}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 11:16:00.336" level="WARN">A$60.00</msg>
+<status status="PASS" starttime="20220201 11:16:00.335" endtime="20220201 11:16:00.336"/>
+</kw>
+<status status="PASS" starttime="20220201 11:16:00.314" endtime="20220201 11:16:00.336"/>
+</iter>
+<status status="PASS" starttime="20220201 11:16:00.267" endtime="20220201 11:16:00.336"/>
+</for>
+<status status="PASS" starttime="20220201 11:16:00.267" endtime="20220201 11:16:00.336"/>
+</kw>
+<kw name="Get_price with Rgex">
+<for flavor="IN">
+<var>${val}</var>
+<value>@{values}</value>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[1]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:00.350" level="INFO">${output} = A$39.99</msg>
+<status status="PASS" starttime="20220201 11:16:00.337" endtime="20220201 11:16:00.350"/>
+</kw>
+<kw name="Get Price" library="getp">
+<var>${res}</var>
+<arg>${output}</arg>
+<msg timestamp="20220201 11:16:00.351" level="INFO">${res} = 39</msg>
+<status status="PASS" starttime="20220201 11:16:00.350" endtime="20220201 11:16:00.351"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 11:16:00.352" level="WARN">39</msg>
+<status status="PASS" starttime="20220201 11:16:00.351" endtime="20220201 11:16:00.352"/>
+</kw>
+<status status="PASS" starttime="20220201 11:16:00.337" endtime="20220201 11:16:00.352"/>
+</iter>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[2]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:00.368" level="INFO">${output} = A$100.00</msg>
+<status status="PASS" starttime="20220201 11:16:00.353" endtime="20220201 11:16:00.368"/>
+</kw>
+<kw name="Get Price" library="getp">
+<var>${res}</var>
+<arg>${output}</arg>
+<msg timestamp="20220201 11:16:00.369" level="INFO">${res} = 100</msg>
+<status status="PASS" starttime="20220201 11:16:00.369" endtime="20220201 11:16:00.369"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 11:16:00.370" level="WARN">100</msg>
+<status status="PASS" starttime="20220201 11:16:00.369" endtime="20220201 11:16:00.370"/>
+</kw>
+<status status="PASS" starttime="20220201 11:16:00.352" endtime="20220201 11:16:00.370"/>
+</iter>
+<iter>
+<var name="${val}">//*[@id="services-table"]/tbody/tr[3]/td[6]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${output}</var>
+<arg>${val}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:00.383" level="INFO">${output} = A$60.00</msg>
+<status status="PASS" starttime="20220201 11:16:00.370" endtime="20220201 11:16:00.384"/>
+</kw>
+<kw name="Get Price" library="getp">
+<var>${res}</var>
+<arg>${output}</arg>
+<msg timestamp="20220201 11:16:00.384" level="INFO">${res} = 60</msg>
+<status status="PASS" starttime="20220201 11:16:00.384" endtime="20220201 11:16:00.384"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${res}</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 11:16:00.385" level="WARN">60</msg>
+<status status="PASS" starttime="20220201 11:16:00.385" endtime="20220201 11:16:00.385"/>
+</kw>
+<status status="PASS" starttime="20220201 11:16:00.370" endtime="20220201 11:16:00.385"/>
+</iter>
+<status status="PASS" starttime="20220201 11:16:00.336" endtime="20220201 11:16:00.385"/>
+</for>
+<status status="PASS" starttime="20220201 11:16:00.336" endtime="20220201 11:16:00.385"/>
+</kw>
+<kw name="IfElse_Case">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${choice}==1</arg>
+<arg>Add</arg>
+<arg>ELSE IF</arg>
+<arg>${choice}==2</arg>
+<arg>Mul</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>"nothing is done"</arg>
+<arg>WARN</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>"nothing is done"</arg>
+<arg>WARN</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220201 11:16:00.387" level="WARN">"nothing is done"</msg>
+<status status="PASS" starttime="20220201 11:16:00.386" endtime="20220201 11:16:00.387"/>
+</kw>
+<status status="PASS" starttime="20220201 11:16:00.386" endtime="20220201 11:16:00.387"/>
+</kw>
+<status status="PASS" starttime="20220201 11:16:00.385" endtime="20220201 11:16:00.387"/>
+</kw>
+<kw name="Create_Service">
+<kw name="Get File" library="OperatingSystem">
+<var>${j_file}</var>
+<arg>data.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20220201 11:16:00.388" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\rames\PycharmProjects\Mytasks\TestCases\data.json"&gt;C:\Users\rames\PycharmProjects\Mytasks\TestCases\data.json&lt;/a&gt;'.</msg>
+<msg timestamp="20220201 11:16:00.388" level="INFO">${j_file} = {
+  "Service":[
+{"ServiceName":"football",
+"Code":"RA12223",
+"Price":"124.24",
+"ServiceType":"Default for new clients"
+}
+]
+}</msg>
+<status status="PASS" starttime="20220201 11:16:00.388" endtime="20220201 11:16:00.388"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${jsfile}</var>
+<arg>json.loads('''${j_file}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220201 11:16:00.389" level="INFO">${jsfile} = {'Service': [{'ServiceName': 'football', 'Code': 'RA12223', 'Price': '124.24', 'ServiceType': 'Default for new clients'}]}</msg>
+<status status="PASS" starttime="20220201 11:16:00.388" endtime="20220201 11:16:00.389"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${service_name}</var>
+<arg>${jsfile["Service"][0]["ServiceName"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220201 11:16:00.390" level="INFO">${service_name} = football</msg>
+<status status="PASS" starttime="20220201 11:16:00.389" endtime="20220201 11:16:00.390"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${service_code}</var>
+<arg>${jsfile["Service"][0]["Code"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220201 11:16:00.390" level="INFO">${service_code} = RA12223</msg>
+<status status="PASS" starttime="20220201 11:16:00.390" endtime="20220201 11:16:00.390"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${price}</var>
+<arg>${jsfile["Service"][0]["Price"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220201 11:16:00.391" level="INFO">${price} = 124.24</msg>
+<status status="PASS" starttime="20220201 11:16:00.391" endtime="20220201 11:16:00.391"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//*[@id="new-service-12-link"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:00.392" level="INFO">Clicking element '//*[@id="new-service-12-link"]'.</msg>
+<status status="PASS" starttime="20220201 11:16:00.392" endtime="20220201 11:16:00.924"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="service_name"]</arg>
+<arg>${service_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:00.924" level="INFO">Typing text 'football' into text field '//input[@id="service_name"]'.</msg>
+<status status="PASS" starttime="20220201 11:16:00.924" endtime="20220201 11:16:01.038"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="service_code"]</arg>
+<arg>${service_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:01.039" level="INFO">Typing text 'RA12223' into text field '//input[@id="service_code"]'.</msg>
+<status status="PASS" starttime="20220201 11:16:01.038" endtime="20220201 11:16:01.123"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="service_price"]</arg>
+<arg>${price}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:01.124" level="INFO">Typing text '124.24' into text field '//input[@id="service_price"]'.</msg>
+<status status="PASS" starttime="20220201 11:16:01.124" endtime="20220201 11:16:01.208"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@id="save-btn"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220201 11:16:01.208" level="INFO">Clicking button '//button[@id="save-btn"]'.</msg>
+<status status="PASS" starttime="20220201 11:16:01.208" endtime="20220201 11:16:03.062"/>
+</kw>
+<status status="PASS" starttime="20220201 11:16:00.387" endtime="20220201 11:16:03.062"/>
+</kw>
+<status status="PASS" starttime="20220201 11:15:54.112" endtime="20220201 11:16:03.063"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220201 11:16:03.065" endtime="20220201 11:16:05.270"/>
+</kw>
+<status status="PASS" starttime="20220201 11:15:43.467" endtime="20220201 11:16:05.270"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Mytask">Mytask</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220201 11:16:00.293" level="WARN">A$39.99</msg>
+<msg timestamp="20220201 11:16:00.314" level="WARN">A$100.00</msg>
+<msg timestamp="20220201 11:16:00.336" level="WARN">A$60.00</msg>
+<msg timestamp="20220201 11:16:00.352" level="WARN">39</msg>
+<msg timestamp="20220201 11:16:00.370" level="WARN">100</msg>
+<msg timestamp="20220201 11:16:00.385" level="WARN">60</msg>
+<msg timestamp="20220201 11:16:00.387" level="WARN">"nothing is done"</msg>
+</errors>
+</robot>
